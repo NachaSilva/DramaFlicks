@@ -1,0 +1,26 @@
+:root{
+  --purple: #2F2C44;
+  --white: #FFFFFF;
+  --black: #0D0D0D;
+  --blue: #006ADF;
+  --font: 'Montserrat', sans-serif;
+}
+  #root{
+  background-color: var(--purple);
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.header{
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.header img{
+  width: 60px;
+  height: 60px;
+}
