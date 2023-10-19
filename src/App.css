@@ -11,20 +11,55 @@
   width: auto;
   height: auto;
 }
-
+/* MOBILE VIEW */
 /* HOME */
 .header{
-  height: 70px;
+  height: 90px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .header img{
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
+  margin-top: 10px;
 }
 
-.hr{
-  border: 1px solid red;
+.titleCategories{
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--white);
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.movies{
+  display: grid;
+  justify-content: space-around;
+}
+
+.movieDiv{
+  margin-bottom: 15px;
+}
+.movieImage{
+  width: 200px;
+  height: 300px;
+}
+
+/* TABLET VIEW */
+@media (min-width: 768px){
+  .movies{
+    display: grid;  
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 1020px){
+  .movies{
+    display: grid;  
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  }
 }
