@@ -53,9 +53,6 @@ export const MoviesHome = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-
-
-
     <h2 className='titleCategories'>Acción</h2>
       <div className='movies'>
         {movies &&

@@ -8,14 +8,14 @@ export const Home = () => {
   // const IMAGE_PATH = 'https://image.tmdb.org/t/p/original'
   // const URL_IMAGE = 'https://image.tmdb.org/t/p/original'
 
-  // //VARIABLES DE ESTADO
+
 
   return (
     <>
       <div className='header'>
         <img className='logo' src='public\img\logo.png' alt='logo imagen' />
         <nav className='navbar navbar-light'>
-          <form className='form-inline'>
+          <form className='form-inline formFlex'>
             <input
               className='form-control mr-sm-2'
               type='search'
