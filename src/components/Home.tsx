@@ -1,3 +1,4 @@
+import { BannerHome } from './BannerHome';
 import { MoviesHome } from './MoviesHome';
 // import { GetMovies } from "../services/TokenShowMovies";
 // import { showMovies } from "../models/movies";
@@ -15,7 +16,7 @@ export const Home = () => {
       <div className='header'>
         <img className='logo' src='public\img\logo.png' alt='logo imagen' />
         <nav className='navbar navbar-light'>
-          <form className='form-inline formFlex'>
+          <form className='form-inline'>
             <input
               className='form-control mr-sm-2'
               type='search'
@@ -38,7 +39,7 @@ export const Home = () => {
           />
         </svg>
       </div>
-
+      <BannerHome/>
       <MoviesHome />
     </>
   );
