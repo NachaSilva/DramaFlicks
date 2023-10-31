@@ -71,6 +71,10 @@
   width: 200px;
   height: 300px;
 }
+.movieImage:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+}
 
 /* TABLET VIEW */
 @media (min-width: 768px){

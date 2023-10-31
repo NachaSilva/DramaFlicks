@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const MoviesHome = () => {
   const [movies, setMovies] = useState<MovieData | null>(null);
@@ -22,12 +23,12 @@ export const MoviesHome = () => {
     totalResults: string;
     Response: string;
   }
+  const navigate = useNavigate();
+  const handleClickInfo= () =>{
+    navigate('/movieInfo')
+  }
 
   console.log(movies);
-
-  // const handleScrollLeft = () =>{
-  //   setScrollPosition(Math.max(0, scrollPosition - 300));
-  // }
 
   const handleScrollLeft =()=>{
     const content = document.querySelector(".movies-container").scrollLeft -= 800;
@@ -35,6 +36,8 @@ export const MoviesHome = () => {
   const handleScrollRight = ()=>{
     const content = document.querySelector(".movies-container").scrollLeft += 800;
   }
+
+
 
   return (
     <>
@@ -78,7 +81,8 @@ export const MoviesHome = () => {
         {movies &&
           movies.Search.map((movie) => (
             <div className='movieDiv' key={movie.imdbID}>
-              <img
+              <img 
+                onClick={handleClickInfo}
                 className='movieImage'
                 src={movie.Poster}
                 alt='Imagen Película'
