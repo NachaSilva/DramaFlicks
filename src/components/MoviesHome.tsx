@@ -3,12 +3,39 @@ import { useNavigate } from 'react-router-dom';
 
 export const MoviesHome = () => {
   const [movies, setMovies] = useState<MovieData | null>(null);
+  const [moviesDrama, setMoviesDrama] = useState <MovieData | null>(null);
+  const [moviesLove, setMoviesLove] = useState <MovieData | null>(null);
 
-  useEffect(() => {
-    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=batman')
+
+  const api = 'https://www.omdbapi.com/?';
+
+  const apiKey= 'apikey=601d6a0c&s' 
+
+  // useEffect(() => {
+  //   fetch(api + apiKey+ `&s=${movies}`+ "&type=movie" + "&page=batman")
+  //     .then((response) => response.json())
+  //     .then((movies) => setMovies(movies));
+  // }, []);
+
+    useEffect(() => {
+    fetch("https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=batman")
       .then((response) => response.json())
       .then((movies) => setMovies(movies));
   }, []);
+
+  useEffect(() => {
+    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=wedding')
+      .then((response) => response.json())
+      .then((moviesDrama) => setMoviesDrama(moviesDrama));
+  }, []);
+
+  useEffect(() => {
+    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=love')
+      .then((response) => response.json())
+      .then((moviesLove) => setMoviesLove(moviesLove));
+  }, []);
+
+  console.log(moviesDrama)
 
   interface MovieData {
     Search: {
@@ -36,8 +63,6 @@ export const MoviesHome = () => {
   const handleScrollRight = ()=>{
     const content = document.querySelector(".movies-container").scrollLeft += 800;
   }
-
-
 
   return (
     <>
@@ -90,7 +115,7 @@ export const MoviesHome = () => {
             </div>
           ))}
       </div>
-      <h2 className='titleCategories'>Drama</h2>
+      <h2 className='titleCategories'>Comedia</h2>
 
 <div className='div-buttons-directions'>
   <button id='scrolling-button-left' className='unstyle' onClick={handleScrollLeft}>
@@ -124,8 +149,21 @@ export const MoviesHome = () => {
     </svg>
   </button>
   </div>
-    
-  <h2 className='titleCategories'>Comedia</h2>
+  <div className='movies-container'>
+        
+        {moviesDrama &&
+          moviesDrama.Search.map((moviesDrama) => (
+            <div className='movieDiv' key={moviesDrama.imdbID}>
+              <img 
+                onClick={handleClickInfo}
+                className='movieImage'
+                src={moviesDrama.Poster}
+                alt='Imagen Película'
+              />
+            </div>
+          ))}
+      </div>
+  <h2 className='titleCategories'>Amor</h2>
 
 <div className='div-buttons-directions'>
   <button id='scrolling-button-left' className='unstyle' onClick={handleScrollLeft}>
@@ -159,6 +197,20 @@ export const MoviesHome = () => {
     </svg>
   </button>
   </div>
+  <div className='movies-container'>
+        
+        {moviesLove &&
+          moviesLove.Search.map((movie) => (
+            <div className='movieDiv' key={movie.imdbID}>
+              <img 
+                onClick={handleClickInfo}
+                className='movieImage'
+                src={movie.Poster}
+                alt='Imagen Película'
+              />
+            </div>
+          ))}
+      </div>
 
     </>
   );
