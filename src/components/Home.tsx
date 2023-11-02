@@ -20,6 +20,7 @@ const handleHome = () => {
               placeholder='Qué película buscas?'
               aria-label='Search'
             />
+        <button className="btn btn-outline-light my-2 my-sm-0 button-search" type="submit">Buscar</button>
           </form>
         </nav>
 

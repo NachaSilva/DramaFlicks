@@ -147,6 +147,16 @@ margin-top: 10%;
   justify-content: center;
 }
 
+@media (max-width: 768px){
+  .navBar{
+    height: 40px;
+    align-items: center;
+  }
+  .logo{
+    margin: 0 10px; 
+  }
+}
+
 /* TABLET VIEW */
 @media (min-width: 768px){
   .titleCategories{
@@ -237,6 +247,4 @@ width: 690px;
 height: 540px;
 margin: 0;
 } 
-
-
 }
