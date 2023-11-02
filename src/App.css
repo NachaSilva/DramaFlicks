@@ -89,6 +89,12 @@ font-family: var(--font);
   cursor: pointer;
   transform: scale(1.01);
 }
+.nav-bar{
+  display: flex;
+}
+.button-search{
+  margin-left: 10px;
+}
 
 /* GENRE */
 .titleList{
@@ -107,6 +113,38 @@ font-family: var(--font);
 }
 .menuNav{
   color: var(--purple)
+}
+
+/* ERROR */
+.error-container{
+  height: 100vh !important;
+}
+.error-logo{
+  margin: 35px 10px 65px 35px;
+  width: 50px;
+  height: 50px;
+}
+.error-title{
+  font-family: var(--font);
+  color: var(--white);
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: -10px;
+}
+.error-button{
+  font-family: var(--font);
+  margin: 0;
+  width: 100%;
+  
+}
+.error-img{
+width: 345px;
+height: 270px;
+margin-top: 10%;
+}
+.error-flex{
+  justify-content: center;
 }
 
 /* TABLET VIEW */
@@ -138,6 +176,23 @@ font-family: var(--font);
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
+
+.error-logo{
+  width: 80px;
+  height: 80px;
+  margin: 45px 10px 65px 45px;
+}
+.error-title{
+  font-size: 40px;
+}
+.error-button{
+  height: 50px;
+  font-size: 23px !important;
+}
+.error-img{
+width: 460px;
+height: 360px;
+}
   }
 
 
@@ -161,10 +216,27 @@ font-family: var(--font);
   font-size: 25px;
   top: 80%;
 }
-
 .movies-genre{
   grid-template-columns: repeat(6, 1fr);
   margin: 0 180px;
 }
+.error-flex{
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 80px;
+  
+align-items: center
+}
+.error-logo{
+  margin: 60px 10px 65px 60px;
+}
+.error-title{
+  font-size: 35px;
+}
+.error-img{
+width: 690px;
+height: 540px;
+margin: 0;
+} 
+
 
 }

@@ -5,7 +5,8 @@ import { Accion } from '../Accion';
 import { Romance } from '../Romance';
 import { Drama } from '../Drama';
 import { Comedia } from '../Comedia';
-import { Aventura, Suspenso } from '../Suspenso';
+import { Suspenso } from '../Suspenso';
+import { ErrorRoute } from "../ErrorRoute"
 
 
 export const MainRouter = () => {
@@ -19,6 +20,7 @@ export const MainRouter = () => {
         <Route path='/comedy' element={<Comedia/>} />
         <Route path='/drama' element={<Drama/>} />
         <Route path='/romantic' element={<Romance/>} />
+        <Route path="*" element={<ErrorRoute/>}/>
       </Routes>
     </BrowserRouter>
   );

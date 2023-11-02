@@ -10,14 +10,16 @@ export const Menu = () => {
   return (
     <div className='header'>
     <button className='unstyle'><img className='logo' src='public\img\logo.png' alt='logo imagen' onClick={handleHome} /></button>
+   
     <nav className='navbar navbar-light'>
-      <form className='form-inline'>
+      <form className='form-inline nav-bar'>
         <input
           className='form-control mr-sm-2 searchMovie'
           type='search'
           placeholder='Qué película buscas?'
           aria-label='Search'
         />
+        <button className="btn btn-outline-success my-2 my-sm-0 button-search" type="submit">Buscar</button>
       </form>
     </nav>
     

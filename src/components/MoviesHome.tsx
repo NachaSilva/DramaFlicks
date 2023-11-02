@@ -7,18 +7,11 @@ export const MoviesHome = () => {
   const [moviesLove, setMoviesLove] = useState <MovieData | null>(null);
 
 
-  // const api = 'https://www.omdbapi.com/?';
+  const api = 'https://www.omdbapi.com/?';
+  const apiKey= 'apikey=601d6a0c' 
 
-  // const apiKey= 'apikey=601d6a0c&s' 
-
-  // useEffect(() => {
-  //   fetch(api + apiKey+ `&s=${movies}`+ "&type=movie" + "&page=batman")
-  //     .then((response) => response.json())
-  //     .then((movies) => setMovies(movies));
-  // }, []);
-
-    useEffect(() => {
-    fetch("https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=batman")
+  useEffect(() => {
+    fetch(api + "i=tt3896198&" + apiKey + "&s=batman")
       .then((response) => response.json())
       .then((movies) => setMovies(movies));
   }, []);
