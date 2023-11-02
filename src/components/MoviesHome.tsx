@@ -7,9 +7,9 @@ export const MoviesHome = () => {
   const [moviesLove, setMoviesLove] = useState <MovieData | null>(null);
 
 
-  const api = 'https://www.omdbapi.com/?';
+  // const api = 'https://www.omdbapi.com/?';
 
-  const apiKey= 'apikey=601d6a0c&s' 
+  // const apiKey= 'apikey=601d6a0c&s' 
 
   // useEffect(() => {
   //   fetch(api + apiKey+ `&s=${movies}`+ "&type=movie" + "&page=batman")
@@ -44,8 +44,6 @@ export const MoviesHome = () => {
       imdbID: string;
       Poster: string;
       Genre: string;
-
-      // Otras propiedades de una película
     }[];
     totalResults: string;
     Response: string;

@@ -72,10 +72,6 @@ font-family: var(--font);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
- 
-  /* display: grid;
-  justify-content: space-around;
-  gap: 1rem; */
 }
 
 ::-webkit-scrollbar{
@@ -92,6 +88,25 @@ font-family: var(--font);
 .movieImage:hover{
   cursor: pointer;
   transform: scale(1.01);
+}
+
+/* GENRE */
+.titleList{
+  font-family: var(--font);
+  color: var(--white);
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline;
+  font-size: 30px;
+}
+.movies-genre{
+  display: grid;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 20px; 
+}
+.menuNav{
+  color: var(--purple)
 }
 
 /* TABLET VIEW */
@@ -118,6 +133,11 @@ font-family: var(--font);
   left: 30%;
   transform: translate(-25%, -50%);
 }
+
+.movies-genre{
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
   }
 
 
@@ -125,6 +145,10 @@ font-family: var(--font);
 @media (min-width: 1020px){
   .movies-container{
     padding: 0 60px;
+  }
+
+  .searchMovie{
+    width: 300px !important;
   }
 /* BANNER */
 .carrousel-title{
@@ -137,4 +161,10 @@ font-family: var(--font);
   font-size: 25px;
   top: 80%;
 }
+
+.movies-genre{
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0 180px;
+}
+
 }
