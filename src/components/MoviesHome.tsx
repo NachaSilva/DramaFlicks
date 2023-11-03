@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MovieData } from '../models/movies';
 
 export const MoviesHome = () => {
   const [movies, setMovies] = useState<MovieData | null>(null);
   const [moviesDrama, setMoviesDrama] = useState <MovieData | null>(null);
   const [moviesLove, setMoviesLove] = useState <MovieData | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState <MovieData | null>(null);
 
 
   const api = 'https://www.omdbapi.com/?';
@@ -17,37 +19,26 @@ export const MoviesHome = () => {
   }, []);
 
   useEffect(() => {
-    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=wedding')
+    fetch(api + "i=tt3896198&" + apiKey + "&s=wedding")
       .then((response) => response.json())
       .then((moviesDrama) => setMoviesDrama(moviesDrama));
   }, []);
 
   useEffect(() => {
-    fetch('https://www.omdbapi.com/?i=tt3896198&apikey=601d6a0c&s=love')
+    fetch(api + "i=tt3896198&" + apiKey + "&s=love")
       .then((response) => response.json())
       .then((moviesLove) => setMoviesLove(moviesLove));
   }, []);
 
   console.log(moviesDrama)
 
-  interface MovieData {
-    Search: {
-      Title: string;
-      Year: string;
-      imdbID: string;
-      Poster: string;
-      Genre: string;
-    }[];
-    totalResults: string;
-    Response: string;
-  }
   const navigate = useNavigate();
-  const handleClickInfo= () =>{
-    navigate('/movieInfo')
+
+  const handleClickInfo= (movie: MovieData) =>{
+    setSelectedMovie(movie);
+    navigate("/movieInfo");
   }
-
-  console.log(movies);
-
+  // console.log(movies);
   const handleScrollLeft =()=>{
     const content = document.querySelector(".movies-container").scrollLeft -= 800;
   }
@@ -93,12 +84,11 @@ export const MoviesHome = () => {
       </div>
 
       <div className='movies-container'>
-        
         {movies &&
           movies.Search.map((movie) => (
             <div className='movieDiv' key={movie.imdbID}>
               <img 
-                onClick={handleClickInfo}
+                onClick={()=>handleClickInfo(movies)}
                 className='movieImage'
                 src={movie.Poster}
                 alt='Imagen Película'
@@ -141,14 +131,13 @@ export const MoviesHome = () => {
   </button>
   </div>
   <div className='movies-container'>
-        
         {moviesDrama &&
-          moviesDrama.Search.map((moviesDrama) => (
-            <div className='movieDiv' key={moviesDrama.imdbID}>
+          moviesDrama.Search.map((movie) => (
+            <div className='movieDiv' key={movie.imdbID}>
               <img 
-                onClick={handleClickInfo}
+                onClick={()=>handleClickInfo(moviesDrama)}
                 className='movieImage'
-                src={moviesDrama.Poster}
+                src={movie.Poster}
                 alt='Imagen Película'
               />
             </div>
@@ -194,7 +183,7 @@ export const MoviesHome = () => {
           moviesLove.Search.map((movie) => (
             <div className='movieDiv' key={movie.imdbID}>
               <img 
-                onClick={handleClickInfo}
+                onClick={()=>handleClickInfo()}
                 className='movieImage'
                 src={movie.Poster}
                 alt='Imagen Película'
