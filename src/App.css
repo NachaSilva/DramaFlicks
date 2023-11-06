@@ -147,6 +147,14 @@ margin-top: 10%;
   justify-content: center;
 }
 
+.errorList{
+  color: var(--white);
+  text-align: center;
+}
+.titleInfoMovie{
+  color: var(--white);
+  font-family: var(--font);
+}
 @media (max-width: 768px){
   .navBar{
     height: 40px;

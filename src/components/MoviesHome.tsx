@@ -34,9 +34,14 @@ export const MoviesHome = () => {
 
   const navigate = useNavigate();
 
+
   const handleClickInfo= (movie: MovieData) =>{
     setSelectedMovie(movie);
-    navigate("/movieInfo");
+     navigate("/movieInfo", { state: { selectedMovie: movie.Search } });
+
+    // navigate("/movieInfo", { state: { selectedMovie: movie } });
+    
+    // navigate("/movieInfo");
   }
   // console.log(movies);
   const handleScrollLeft =()=>{
@@ -183,7 +188,7 @@ export const MoviesHome = () => {
           moviesLove.Search.map((movie) => (
             <div className='movieDiv' key={movie.imdbID}>
               <img 
-                onClick={()=>handleClickInfo()}
+                onClick={()=>handleClickInfo(moviesLove.imdbID)}
                 className='movieImage'
                 src={movie.Poster}
                 alt='Imagen Película'
