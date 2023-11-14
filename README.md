@@ -1,5 +1,6 @@
 # DramaFlicks Project
 
+
 ## Índice
 
 * [1. Descripción del Proyecto](#1-descripcion-del-proyecto)
@@ -71,3 +72,6 @@ Otro tip: Optimización de código, que por el momento está en proceso.
 - [x] Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo! [Aquí](https://www.linkedin.com/in/mariaignaciasilva/)
 
 ¡Que disfrutes utilizando esta aplicación de películas!
+=======
+## En proceso
+
