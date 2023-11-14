@@ -8,5 +8,4 @@ export type MovieData ={
       }[];
       totalResults: string;
       Response: string; 
-    
 }

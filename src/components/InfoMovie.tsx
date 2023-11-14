@@ -8,16 +8,6 @@ export const InfoMovie = () => {
   console.log(selectedMovie)
   console.log(selectedMovie[0].imdbID)
 
-
-  // const imdbIDFromURL = new URLSearchParams(location.search).get("imdbID");
-// const id = selectedMovie.imdbID;
-
-// const movieToDisplay = selectedMovie.find(movie => movie.imdbID === imdbIDFromURL);
-
-
-  // const movieInfoId = selectedMovie.find(movie => movie.imdbID === id)
-
-
 if(!selectedMovie){
   return <p className="errorList"> no se encuentran detalles de las pelis</p>
 }
