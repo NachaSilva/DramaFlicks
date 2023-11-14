@@ -30,8 +30,6 @@ export const Drama = () => {
             </div>
           ))}
       </div>
-    
-    
     </>
   )
 }

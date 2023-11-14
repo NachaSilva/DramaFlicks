@@ -29,8 +29,6 @@ export const Comedia = () => {
             </div>
           ))}
       </div>
-    
-    
     </>
   )
 }
