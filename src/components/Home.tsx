@@ -1,29 +1,64 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { BannerHome } from './BannerHome';
 import { MoviesHome } from './MoviesHome';
-
+import { useState } from 'react';
 
 export const Home = () => {
   const navigate = useNavigate();
-const handleHome = () => {
-  navigate('/')
-}
+  const handleHome = () => {
+    navigate('/');
+  };
+
+  // const [movies, setMovies] = useState<MovieData[]>([]);
+  const [query, setQuery] = useState('');
+
+  const searchMovie = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('searching');
+    try {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=ce9a8ba9fbedd1b69dad102a695950c2&query=${query}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+      // setMovies(data.results)
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <>
       <div className='header'>
-      <button className='unstyle'> <img className='logo' src='public\img\logo.png' alt='logo imagen' onClick={handleHome} /></button> 
-      <nav className='navbar navbar-light'>
-      <form className='form-inline nav-bar navBar'>
-        <input
-          className='form-control mr-sm-2 searchMovie'
-          type='search'
-          placeholder='Qué película buscas?'
-          aria-label='Search'
-        />
-        <button className="btn btn-outline-light my-2 my-sm-0 button-search custom-btn-size" type="submit">Buscar</button>
-      </form>
-    </nav>
-
+        <button className='unstyle'>
+          {' '}
+          <img
+            className='logo'
+            src='public\img\logo.png'
+            alt='logo imagen'
+            onClick={handleHome}
+          />
+        </button>
+        <nav className='navbar navbar-light'>
+          <form className='form-inline nav-bar navBar' onSubmit={searchMovie}>
+            <input
+              className='form-control mr-sm-2'
+              type='search'
+              placeholder='Movie Search'
+              aria-label='Search'
+              value={query}
+              onChange={changeHandler}
+            />
+            <button
+              className='btn btn-outline-light my-2 my-sm-0 button-search custom-btn-size'
+              type='submit'
+            >
+              Search
+            </button>
+          </form>
+        </nav>
         <div className='dropdown'>
           <button
             className='btn'
@@ -45,17 +80,35 @@ const handleHome = () => {
               />
             </svg>
           </button>
-          <ul className="dropdown-menu unstyle">
-    <li className="dropdown-item"><NavLink className="nav-link menuNav" to ="/action">Acción</NavLink></li>
-    <li className="dropdown-item"><NavLink className="nav-link menuNav" to ="/comedy">Comedia</NavLink></li>
-    <li className="dropdown-item"><NavLink className="nav-link menuNav" to ="/drama">Drama</NavLink></li>
-    <li className="dropdown-item"><NavLink className="nav-link menuNav" to ="/romantic">Romance</NavLink></li>
-    <li className="dropdown-item"><NavLink className="nav-link menuNav" to ="/suspense">Suspenso</NavLink></li>
-
-    </ul>
+          <ul className='dropdown-menu unstyle'>
+            <li className='dropdown-item'>
+              <NavLink className='nav-link menuNav' to='/action'>
+                Acción
+              </NavLink>
+            </li>
+            <li className='dropdown-item'>
+              <NavLink className='nav-link menuNav' to='/comedy'>
+                Comedia
+              </NavLink>
+            </li>
+            <li className='dropdown-item'>
+              <NavLink className='nav-link menuNav' to='/drama'>
+                Drama
+              </NavLink>
+            </li>
+            <li className='dropdown-item'>
+              <NavLink className='nav-link menuNav' to='/romantic'>
+                Romance
+              </NavLink>
+            </li>
+            <li className='dropdown-item'>
+              <NavLink className='nav-link menuNav' to='/suspense'>
+                Suspenso
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
-      <BannerHome />
       <MoviesHome />
     </>
   );

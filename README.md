@@ -1,6 +1,5 @@
 # DramaFlicks Project
 
-
 ## Índice
 
 * [1. Descripción del Proyecto](#1-descripcion-del-proyecto)
