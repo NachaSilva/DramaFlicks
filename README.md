@@ -59,7 +59,7 @@ A través de focus group con personas entre 30 a 50 años, se descubrieron ciert
 3. Desarrolla y prueba tu función.
 4. Realiza un pull request describiendo tus cambios.
 
-Como tip: La api OMDb-API cuenta con muy pocos datos, pero se podría conectar con una api más completa con el objetivo de que al hacer click en la película muestre otros datos como actores, descripciones, género u otras características que entreguen mayor valor. 
+Como tip: Se puede dar una mejor funcionalidad al buscador y al menú desplegable por género de películas
 
 Otro tip: Optimización de código, que por el momento está en proceso.
 
