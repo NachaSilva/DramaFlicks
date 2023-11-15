@@ -1,20 +1,9 @@
 import { useEffect, useState } from 'react';
 import { MovieBox } from './MovieBox';
+import { BannerHome } from './BannerHome';
+import { MovieData } from '../models/movies';
 
 export const MoviesHome = () => {
-
-  interface MovieData{
-    id: number;
-    title: string;
-    overview: string;
-    poster_path: string; 
-    vote_average: number;
-    vote_count: number; 
-    popularuty: number;
-    release_date: string; 
-    
-  }
-
 
   const API_URL =
     'https://api.themoviedb.org/3/movie/popular?api_key=ce9a8ba9fbedd1b69dad102a695950c2';
@@ -32,7 +21,8 @@ export const MoviesHome = () => {
 
   return (
     <>
-      <div className='container'>
+    <BannerHome/>
+      <div className='containerHome'>
         <div className='grid'>
         {movies.map((movieReq) => (
           <MovieBox key={movieReq.id} {...movieReq} />

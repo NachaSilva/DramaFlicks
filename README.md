@@ -1,10 +1,5 @@
 # DramaFlicks Project
 
-API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=ce9a8ba9fbedd1b69dad102a695950c2"
-
-API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=ce9a8ba9fbedd1b69dad102a695950c2&query"
-
-
 ## Índice
 
 * [1. Descripción del Proyecto](#1-descripcion-del-proyecto)

@@ -1,11 +1,8 @@
-export type MovieData ={
-    Search: {
-        Title: string;
-        Year: string;
-        imdbID: string;
-        Poster: string;
-        Genre: string;
-      }[];
-      totalResults: string;
-      Response: string; 
+export type MovieData= {
+    id: number;
+    title: string;
+    overview: string;
+    poster_path: string; 
+    vote_average: number;
+    release_date: string; 
 }
