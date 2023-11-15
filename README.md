@@ -12,7 +12,7 @@
 
 ## 1. Descripción del Proyecto
 
-El objetivo principal del proyecto fue utilizar una api rest externa usando React y Typescript, ya que en los proyectos anteriores utilicé conexiones con api interna o data interna. El proyecto es una aplicación de películas responsive que se integra con la API de OMDb API para la visualización de información pensando en el usuario.    
+El objetivo principal del proyecto fue utilizar una api rest externa usando React y Typescript, ya que en los proyectos anteriores utilicé conexiones con api interna o data interna. El proyecto es una aplicación de películas responsive que se integra con TMDB API para la visualización de información pensando en el usuario.    
 
 ## 2. Hallazgos
 
@@ -31,7 +31,7 @@ A través de focus group con personas entre 30 a 50 años, se descubrieron ciert
 
  * Javascript: Lenguaje de programación. 
 
- * OMDb-API: Servicio web RESTful para obtener información de películas.
+ * TMDB-API: Servicio web RESTful para obtener información de películas.
 
  * Boostrap y CSS: Estilos y diseño de la aplicación.
 
@@ -44,9 +44,6 @@ A través de focus group con personas entre 30 a 50 años, se descubrieron ciert
  * Vercel: Para desplegar la aplicación DramaFlicks.
 
 ## 4. Prototipos de la Interfaz
-    
-
-
 ## 5. Instrucciones de uso
 1. Clona este repositorio.
 2. Abre una terminal y navega hasta el directorio del proyecto.
